@@ -8,7 +8,6 @@ interface ResultsProps {
 
 export function Results({ tasks }: ResultsProps) {
 
-  console.log(tasks)
   return(
     <div className={styles.results}>
       <div className={styles.markers}>
