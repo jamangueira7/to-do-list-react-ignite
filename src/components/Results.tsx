@@ -2,8 +2,13 @@ import { Tasks } from "./Tasks";
 import { TasksProps } from "../App";
 import styles from "./Results.module.css";
 
-export function Results(tasks: TasksProps[]) {
+interface ResultsProps {
+  tasks: TasksProps[]
+}
 
+export function Results({ tasks }: ResultsProps) {
+
+  console.log(tasks)
   return(
     <div className={styles.results}>
       <div className={styles.markers}>
@@ -19,13 +24,7 @@ export function Results(tasks: TasksProps[]) {
 
       <div className={styles.tasks}>
         {
-
-          tasks
-            ? tasks.map(task => {
-              console.log("---->", task);
-            return <Tasks key={task.id} task={task}/>
-          })
-            : "Test"
+          tasks.map(task => <Tasks key={task.id} {...task}/>)
         }
       </div>
     </div>

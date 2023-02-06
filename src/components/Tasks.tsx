@@ -1,8 +1,14 @@
-import { TasksProps } from "../App";
 import { Trash } from "phosphor-react";
 import styles from "./Tasks.module.css";
+import {TasksProps} from "../App";
 
-export function Tasks({ id, description, done }: TasksProps) {
+interface TaskProps {
+  task: TasksProps
+}
+
+export function Tasks({ task }: TaskProps ) {
+
+  const { description } = task;
 
   return(
     <div className={styles.container}>

@@ -45,7 +45,7 @@ function App() {
     <div className="App">
       <Header />
       <Search searchResult={searchResult}/>
-      <Results tasks={result}/>
+      <Results {...result}/>
     </div>
   )
 }
