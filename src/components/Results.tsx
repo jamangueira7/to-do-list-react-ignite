@@ -1,7 +1,9 @@
 import { Tasks } from "./Tasks";
+import { TasksProps } from "../App";
 import styles from "./Results.module.css";
 
-export function Results() {
+export function Results(tasks: TasksProps[]) {
+
   return(
     <div className={styles.results}>
       <div className={styles.markers}>
@@ -16,11 +18,15 @@ export function Results() {
       </div>
 
       <div className={styles.tasks}>
-        <Tasks />
-        <Tasks />
-        <Tasks />
-        <Tasks />
-        <Tasks />
+        {
+
+          tasks
+            ? tasks.map(task => {
+              console.log("---->", task);
+            return <Tasks key={task.id} task={task}/>
+          })
+            : "Test"
+        }
       </div>
     </div>
   );
