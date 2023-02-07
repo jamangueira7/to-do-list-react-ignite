@@ -41,10 +41,21 @@ function App() {
     setResult(searchTask);
   }
 
+  function createTask(searchValue: string) {
+    const searchId = tasks[tasks.length - 1].id;
+    tasks = [...tasks, {
+      id: searchId + 1,
+      description: searchValue,
+      done: false
+    }];
+
+    setResult(tasks);
+  }
+
   return (
     <div className="App">
       <Header />
-      <Search searchResult={searchResult}/>
+      <Search searchResult={searchResult} createTask={createTask}/>
       <Results tasks={result}/>
     </div>
   )

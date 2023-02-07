@@ -3,13 +3,14 @@ import { PlusCircle } from "phosphor-react";
 import styles from "./Search.module.css";
 interface SearchProps {
   searchResult: (searchValue: string) => void;
+  createTask: (searchValue: string) => void;
 }
-export function Search({ searchResult }: SearchProps) {
+export function Search({ searchResult, createTask }: SearchProps) {
   const [searchValue, setSearchValue] = useState('');
 
   function handleSearchTasksClick(event: FormEvent) {
     event.preventDefault();
-    searchResult(searchValue);
+    createTask(event.target.searchValue.value);
     setSearchValue('');
   }
 
