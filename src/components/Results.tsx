@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react";
 import { Tasks } from "./Tasks";
 import { TasksProps } from "../App";
 import styles from "./Results.module.css";
-import {useState} from "react";
 
 interface ResultsProps {
   tasks: TasksProps[]
@@ -11,14 +11,17 @@ export function Results({ tasks }: ResultsProps) {
   const [tasksNumber, setTasksNumber] = useState(tasks.length);
   const [tasksCompleteNumber, setTasksCompleteNumber] = useState(countTasks());
 
+
+  useEffect(() => {
+    setTasksNumber(tasks.length);
+  }, [tasks]);
+
   function countTasks() {
     const tasksCompleteCount = tasks.filter(task => task.done);
     return tasksCompleteCount.length;
   }
   function handleChangeComplete(id: number) {
     tasks.map(task => (task.id === id) ? task.done = !task.done : task.done);
-
-
     setTasksCompleteNumber(countTasks());
   }
 
@@ -27,7 +30,6 @@ export function Results({ tasks }: ResultsProps) {
     tasks.splice(foundIndex, 1);
     setTasksNumber(tasks.length);
   }
-
 
   return(
     <div className={styles.results}>
