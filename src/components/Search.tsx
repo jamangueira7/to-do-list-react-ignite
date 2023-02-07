@@ -1,10 +1,12 @@
 import { useState, ChangeEvent, FormEvent, InvalidEvent } from "react";
 import { PlusCircle } from "phosphor-react";
 import styles from "./Search.module.css";
+
 interface SearchProps {
   searchResult: (searchValue: string) => void;
   createTask: (searchValue: string) => void;
 }
+
 export function Search({ searchResult, createTask }: SearchProps) {
   const [searchValue, setSearchValue] = useState('');
 
@@ -16,6 +18,7 @@ export function Search({ searchResult, createTask }: SearchProps) {
 
   function handleSearchTasks(event: ChangeEvent<HTMLTextAreaElement>) {
     searchResult(event.target.value);
+    setSearchValue(event.target.value);
   }
 
   return(
@@ -26,6 +29,7 @@ export function Search({ searchResult, createTask }: SearchProps) {
           name="searchValue"
           placeholder="Adicionar uma nova tarefa"
           onChange={handleSearchTasks}
+          value={searchValue}
         />
         <button
           className={styles.searchButton}
