@@ -11,8 +11,16 @@
   <img alt="app" src=".github/img.png">
 </p>
 
+<p align="center">
+  <img alt="app" src=".github/img_1.png">
+</p>
 
-## Bora Codar 05 - Calculadora
+<p align="center">
+  <img alt="app" src=".github/img_2.png">
+</p>
+
+
+## ToDo list - Desafio ignite
 
 ## 🚀 Tecnologias
 
@@ -20,20 +28,22 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [React](https://pt-br.reactjs.org/)
 
 
 ## 💻 Projeto
 
-Projeto de front end (apenas template) de uma calculadora
+Projeto de um To Do list.
 
-Inspirado na video aula do canal - [Rocketseat](https://)
+Instruções do desafio - [Aqui](https://efficient-sloth-d85.notion.site/Desafio-01-Praticando-os-conceitos-do-ReactJS-91fd63dd1a5b4a2796152de293ec1074)
 
-Figma do projeto - [Aqui](https://www.figma.com/community/file/1202607074523509182)
+Figma do projeto - [Aqui](https://www.figma.com/file/UK28vNovwmWzrMm6100UWs/ToDo-List-(Copy)?node-id=0%3A1&t=j3198c0Yzc5V5cKD-0)
 
 ## 🚀 Como Rodar
 
-- Clone o projeto.
-- Entre no repositório e clique duas vezes no arquivo index.html
+-Clone o projeto.
+-Entre na pasta do projeto e rode npm install (pode usar yarn install de acordo com a sua configuração).
+-Rodar npm run dev.
 
 ## 🤔 Como contribuir
 
