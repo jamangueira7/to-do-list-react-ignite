@@ -5,7 +5,7 @@ interface SearchProps {
   searchResult: (searchValue: string) => void;
 }
 export function Search({ searchResult }: SearchProps) {
-  const [searchValue, setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('');
 
   function handleSearchTasksClick(event: FormEvent) {
     event.preventDefault();
@@ -18,10 +18,6 @@ export function Search({ searchResult }: SearchProps) {
     setSearchValue(event.target.value);
   }
 
-  function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
-    event.target.setCustomValidity('Esse compo é obrigatório.');
-  }
-
   return(
       <form onSubmit={handleSearchTasksClick} className={styles.search}>
         <input
@@ -30,7 +26,6 @@ export function Search({ searchResult }: SearchProps) {
           name="searchValue"
           placeholder="Adicionar uma nova tarefa"
           onChange={handleSearchTasks}
-          onInvalid={handleNewCommentInvalid}
         />
         <button
           className={styles.searchButton}

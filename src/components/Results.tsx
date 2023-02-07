@@ -22,9 +22,11 @@ export function Results({ tasks }: ResultsProps) {
       </div>
 
       <div className={styles.tasks}>
-        {
-          tasks.map(task => <Tasks key={task.id} {...task}/>)
-        }
+          {
+            tasks.map(task => {
+              return <Tasks key={task.id} {...task}/>
+            })
+          }
       </div>
     </div>
   );
