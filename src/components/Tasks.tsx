@@ -3,12 +3,23 @@ import { Trash, Check } from "phosphor-react";
 import styles from "./Tasks.module.css";
 import { TasksProps } from "../App";
 
+interface TaskProps {
+  task: TasksProps;
+  handleChangeComplete: (id: number) => void;
+  removeTask: (id: number) => void;
+}
 
-export function Tasks({ id, description, done } : TasksProps ) {
+export function Tasks({ task, handleChangeComplete, removeTask } : TaskProps ) {
+  const { id, description, done } = task
   const [checked, setChecked] = useState(done);
 
-  function handleOnChangeDoneCheckbox() {
+  function handleOnChangeDoneCheckbox(id: number) {
     setChecked(!checked);
+    handleChangeComplete(id);
+  }
+
+  function handleRemoveTask(id: number) {
+    removeTask(id);
   }
 
   return(
@@ -17,7 +28,7 @@ export function Tasks({ id, description, done } : TasksProps ) {
         <input
           type="checkbox"
           checked={checked}
-          onChange={handleOnChangeDoneCheckbox}
+          onChange={() => handleOnChangeDoneCheckbox(id)}
           id={id.toString()}
           name="tasks"
           value={id}
@@ -35,6 +46,7 @@ export function Tasks({ id, description, done } : TasksProps ) {
       <Trash
         size={24}
         color="#808080"
+        onClick={() => handleRemoveTask(id)}
       />
     </div>
   );

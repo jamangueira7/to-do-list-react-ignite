@@ -35,7 +35,7 @@
 }
 
 .taskNumberValue, .taskDoneValue {
-    width: 2.5rem;
+    min-width: 2.5rem;
     height: 1.9rem;
     background: #333333;
     border-radius: 999px;
@@ -43,6 +43,7 @@
     justify-content: center;
     align-items: center;
     color: #D9D9D9;
+    padding: 2px 8px;
 }
 
 .TaskDoneDescription {
