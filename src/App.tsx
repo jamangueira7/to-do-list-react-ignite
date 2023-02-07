@@ -37,8 +37,8 @@ function App() {
   const [result, setResult] = useState<TasksProps[]>(tasks)
 
   function searchResult(searchValue: string) {
-    setResult(tasks);
-    console.log("Test" + tasks)
+    const searchTask = tasks.filter(task => task.description.toLowerCase().includes(searchValue));
+    setResult(searchTask);
   }
 
   return (

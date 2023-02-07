@@ -14,8 +14,7 @@ export function Search({ searchResult }: SearchProps) {
   }
 
   function handleSearchTasks(event: ChangeEvent<HTMLTextAreaElement>) {
-    event.target.setCustomValidity('');
-    setSearchValue(event.target.value);
+    searchResult(event.target.value);
   }
 
   return(
