@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Tasks } from "./Tasks";
+import { EmptyTasks } from "./EmptyTasks";
 import { TasksProps } from "../App";
 import styles from "./Results.module.css";
 
@@ -52,16 +53,18 @@ export function Results({ tasks }: ResultsProps) {
 
       <div className={styles.tasks}>
           {
-            tasks.map(task => {
-              return (
-                <Tasks
-                  key={task.id}
-                  task = {task}
-                  handleChangeComplete={handleChangeComplete}
-                  removeTask={removeTask}
-                />
-              )
-            })
+            tasks.length !== 0
+              ? tasks.map(task => {
+                  return (
+                    <Tasks
+                      key={task.id}
+                      task = {task}
+                      handleChangeComplete={handleChangeComplete}
+                      removeTask={removeTask}
+                    />
+                  )
+                })
+              : <EmptyTasks />
           }
       </div>
     </div>
