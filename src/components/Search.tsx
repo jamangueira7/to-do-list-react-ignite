@@ -32,7 +32,7 @@ export function Search({ searchResult }: SearchProps) {
           title="Buscar tasks"
         >
           Criar
-          <PlusCircle size={24} />
+          <PlusCircle size={20} />
         </button>
       </form>
   );

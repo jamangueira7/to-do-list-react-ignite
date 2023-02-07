@@ -6,6 +6,7 @@
     align-items: center;
     box-sizing: border-box;
     margin-top: -2rem;
+    gap: 1rem;
 }
 
 .searchInput {
@@ -27,13 +28,18 @@
     font-weight: bold;
     color: #F2F2F2;
     text-decoration: none;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
 }
+
 
 ::placeholder {
     color: #808080;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
 }
